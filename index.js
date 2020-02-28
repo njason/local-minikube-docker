@@ -37,3 +37,8 @@ function handleError(res, code) {
 server.listen(port, () => {
     console.log(`Server listening on the port ${port}`);
 })
+
+process.on('SIGTERM', () => {
+    console.log('Received shutdown signal');
+    server.close();
+});

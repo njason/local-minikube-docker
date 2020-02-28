@@ -6,7 +6,7 @@ metadata:
     app: nodejs-api
   name: nodejs-api
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: nodejs-api
@@ -24,4 +24,8 @@ spec:
         resources: {}
         ports:
           - containerPort: 3000
+        lifecycle:
+          preStop:
+            exec:
+              command: ["sleep", "10"]
 status: {}
