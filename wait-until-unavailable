@@ -1,7 +1,7 @@
 ping_health_endpoint()
 {
-  wget --spider localhost:3000/healthy
   sleep 5
+  wget --spider localhost:3000/healthy
 }
 
 wget --spider localhost:3000/shutdown
