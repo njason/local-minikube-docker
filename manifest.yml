@@ -26,10 +26,10 @@ spec:
           - containerPort: 3000
         lifecycle:
           preStop:
-            #            exec:
-            #              command: ["sleep", "10"]
-            httpGet:
-              path: "hello"
-              port: 3000
-              scheme: "HTTP"
+            exec:
+              command: ["sh", "/usr/home/wait-until-unavailable"]
+            #httpGet:
+            #  path: "hello"
+            #  port: 3000
+            #  scheme: "HTTP"
 status: {}
