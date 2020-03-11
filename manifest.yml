@@ -26,6 +26,10 @@ spec:
           - containerPort: 3000
         lifecycle:
           preStop:
-            exec:
-              command: ["sleep", "10"]
+            #            exec:
+            #              command: ["sleep", "10"]
+            httpGet:
+              path: "hello"
+              port: 3000
+              scheme: "HTTP"
 status: {}

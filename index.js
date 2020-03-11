@@ -18,6 +18,7 @@ const server = http.createServer((req,res) => {
     const {pathname, query} = url.parse(req.url);
 
     if(pathname === '/hello') {
+        console.log('hello endpoint');
         res.writeHead(200, {'Content-Type' : 'text/html'});
         res.statusCode = 200;
         const {name} = qs.parse(query);

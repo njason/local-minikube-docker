@@ -8,3 +8,8 @@ Example project on how to use local docker images on minikube
 After creating the deployment, tail the logs of the created pod, `kubectl logs --follow nodejs-api-58b77f7d96-lv66d`
 
 Then, delete the pod `kubectl delete pods nodejs-api-58b77f7d96-lv66d`, the pod should then be in the terminating state, but you should not see the message `Received shutdown signal` for 10 seconds because of the sleep command in the preStop hook.
+
+## httpGet
+
+A caveat I found was in the path I needed to remove the root '/'. Like what is explained [here](https://github.com/kubernetes/kubernetes/issues/56951#issue-280388803)
+
