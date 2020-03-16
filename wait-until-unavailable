@@ -4,6 +4,8 @@ ping_health_endpoint()
   wget --spider localhost:3000/healthy
 }
 
+sleep 30
+
 wget --spider localhost:3000/shutdown
 
 ping_health_endpoint

@@ -41,6 +41,6 @@ server.listen(port, () => {
 })
 
 process.on('SIGTERM', () => {
-    console.log('Received shutdown signal');
+    console.log(`${process.env.MYID} Received shutdown signal`);
     server.close();
 });
